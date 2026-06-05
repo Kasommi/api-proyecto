@@ -34,6 +34,7 @@ class ViajeController extends Controller
             'fecha_visita' => 'nullable|date',
             'firebase_uid' => 'nullable|string|max:255',
             'firebase_email' => 'nullable|email|max:255',
+            'nivel_educativo' => 'nullable|string|max:255',
         ]);
 
         if ($request->hasFile('imagen')) {
@@ -66,6 +67,7 @@ class ViajeController extends Controller
             'fecha_visita' => 'nullable|date',
             'firebase_uid' => 'nullable|string|max:255',
             'firebase_email' => 'nullable|email|max:255',
+            'nivel_educativo' => 'sometimes|nullable|string|max:255',
         ]);
 
         if ($request->hasFile('imagen')) {
@@ -109,6 +111,7 @@ class ViajeController extends Controller
             'fecha_visita' => $viaje->fecha_visita,
             'firebase_uid' => $viaje->firebase_uid,
             'firebase_email' => $viaje->firebase_email,
+            'nivel_educativo' => $viaje->nivel_educativo,
             'created_at' => $viaje->created_at,
             'updated_at' => $viaje->updated_at,
         ];
