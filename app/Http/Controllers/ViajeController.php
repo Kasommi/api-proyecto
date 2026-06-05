@@ -40,6 +40,7 @@ class ViajeController extends Controller
         if ($request->hasFile('imagen')) {
             $data['imagen'] = $request->file('imagen')->store('viajes', 'public');
         }
+        $data['nivel_educativo'] = $data['nivel_educativo'] ?? 'Superior';
 
         $viaje = Viaje::create($data);
 
@@ -114,6 +115,7 @@ class ViajeController extends Controller
             'nivel_educativo' => $viaje->nivel_educativo,
             'created_at' => $viaje->created_at,
             'updated_at' => $viaje->updated_at,
+
         ];
     }
 }
